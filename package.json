@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "concurrently": "^9.2.1",
-    "react-router-dom": "^7.13.1"
-  },
-  "scripts": {
-    "both": "concurrently \"cd \\\"Frontend I-Notebook/Frontend I-Notebook\\\" && npm run start\" \"cd \\\"Backend I-Notebook\\\" && nodemon index.js\""
-  }
-}
