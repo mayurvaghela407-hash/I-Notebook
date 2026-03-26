@@ -40,4 +40,4 @@ const Addnote = (props) => {
     )
 }
 
-export default Addnote
+export default Addnote;
