@@ -8,7 +8,7 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = credentials;
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch("http://inotebook-backend.onrender.com/api/auth/createuser", {
       method: 'Post',
       headers: {
         'content-type': 'application/json',
@@ -20,11 +20,11 @@ const Signup = (props) => {
     if (json.success) {
       // save the auth-token and redirect
       localStorage.setItem('token', json.authtoken);
-       props.showAlert("Account Created Successfully", "success")
+      props.showAlert("Account Created Successfully", "success")
       navigate("/");
     }
     else {
-     props.showAlert("Invaild Details", "danger")
+      props.showAlert("Invaild Details", "danger")
     }
   }
   const onChange = (e) => {
@@ -32,7 +32,7 @@ const Signup = (props) => {
   }
   return (
     <div className="container mt-2">
-       <h2 className="my-2">Create an account to use I-Notebook</h2>
+      <h2 className="my-2">Create an account to use I-Notebook</h2>
       <form onSubmit={handleSubmit}>
         <div className="my-3">
           <label htmlFor="name" className="form-label">Name</label>
