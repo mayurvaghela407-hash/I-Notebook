@@ -2,11 +2,11 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className="container mt-4">
+    <div className="container mt-2">
       <h2>About I-Notebook</h2>
       <p>I-Notebook is a full-stack MERN application that allows users to securely manage their personal notes.</p>
       <p>This application provides user authentication using JWT, ensuring that all notes are private and accessible only to the logged-in user.</p>
-      
+
       <h4>Key Features:</h4>
       <ul>
         <li>User Signup & Login Authentication</li>
