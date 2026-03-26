@@ -8,7 +8,7 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // extracted fields from credentials are no longer extracted here to avoid unused variable warning
-    const response = await fetch("http://inotebook-backend.onrender.com/api/auth/createuser", {
+    const response = await fetch("https://inotebook-backend.onrender.com/api/auth/createuser", {
       method: 'Post',
       headers: {
         'content-type': 'application/json',
