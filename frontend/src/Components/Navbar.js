@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import "../App.css"
 
 const Navbar = () => {
     let location = useLocation();
@@ -29,11 +30,11 @@ const Navbar = () => {
                     {!localStorage.getItem('token') ? <form className="d-flex">
                         <Link className="btn btn-primary mx-1" to="/Login" role="button">Login</Link>
                         <Link className="btn btn-primary mx-1" to="/Signup" role="button">Signup</Link>
-                    </form> : <button onClick={handleLogout} className="btn btn-primary">Logout</button>}
+                    </form> : <button onClick={handleLogout} className="nav-btn">Logout</button>}
                 </div>
             </div>
         </nav>
     )
 }
 
-export default Navbar
+export default Navbar;

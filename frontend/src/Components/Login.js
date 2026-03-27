@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import "../App.css"
+
 
 
 const Login = (props) => {
@@ -21,12 +23,12 @@ const Login = (props) => {
         if (json.success) {
             // save the auth-token and redirect
             localStorage.setItem('token', json.authtoken);
-             props.showAlert("Logged In Successfully", "success")
+            props.showAlert("Logged In Successfully", "success")
             navigate("/");
         }
- 
-        else{
-             props.showAlert("Invaild credentials", "danger")
+
+        else {
+            props.showAlert("Invaild credentials", "danger")
         }
     }
     const onChange = (e) => {
@@ -34,19 +36,23 @@ const Login = (props) => {
     }
 
     return (
-        <div className="mt-2">
-            <h2 className="my-2">Login to continue to I-Notebook</h2>
-        <form onSubmit={handleSubmit}>
-            <div className="my-3">
-                <label htmlFor="email" className="form-label">Email address</label>
-                <input type="email" className="form-control" value={credentials.email} onChange={onChange} name='email' id="email" aria-describedby="emailHelp" />
+        <div className="wrapper">
+            <div className="card">
+                <div className="mt-1">
+                    <h2 className="my-2">Login to continue to I-Notebook</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div className="my-3">
+                            <label htmlFor="email" className="form-label">Email address</label>
+                            <input type="email" className="form-control" value={credentials.email} onChange={onChange} name='email' id="email" aria-describedby="emailHelp" />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="password" className="form-label">Password</label>
+                            <input type="password" className="form-control" value={credentials.password} onChange={onChange} name='password' id="password" />
+                        </div>
+                        <button type="submit" className="form-btn">Login</button>
+                    </form>
+                </div>
             </div>
-            <div className="mb-3">
-                <label htmlFor="password" className="form-label">Password</label>
-                <input type="password" className="form-control" value={credentials.password} onChange={onChange} name='password' id="password" />
-            </div>
-            <button type="submit" className="btn btn-primary">Login</button>
-        </form>
         </div>
     )
 }
